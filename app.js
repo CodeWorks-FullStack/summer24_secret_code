@@ -108,6 +108,8 @@ console.groupEnd()
 
 const secretCode = '💀💀😺💀🙂'
 
+const superSecretCode = '🍉🐃💀💀😺'
+
 let userCode = ''
 
 // REVIEW all different ways to declare functions
@@ -135,16 +137,29 @@ function addSkull() {
   updateUserCodeElement()
 }
 
+function addEmoji(emoji) {
+  console.log('This is the emoji', emoji);
+  userCode += emoji
+  updateUserCodeElement()
+}
+
 function checkCode() {
   if (userCode == secretCode) {
     console.log('YOU GOT IT RIGHT BUDDY')
     revealSecretPicture()
   }
+  else if (userCode == superSecretCode) {
+    revealSuperSecretPicture()
+  }
   else {
     console.log("YOU GOT IT WRONG, NOT SMART GUY")
-    userCode = ''
-    updateUserCodeElement()
+    // Closes browser tab
+    window.alert('YOU ARE SO DUMB')
+    // Closes browser tab
+    window.close()
   }
+  userCode = ''
+  updateUserCodeElement()
 }
 
 function updateUserCodeElement() {
@@ -160,6 +175,13 @@ function revealSecretPicture() {
 
   // if using innerHTML, the string will be read as if it is HTML
   resultBoxElement.innerHTML = '<img class="img-fluid" src="https://images.unsplash.com/photo-1611145949721-e5158cddf59f?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Best cat ever">'
+}
+function revealSuperSecretPicture() {
+  const resultBoxElement = document.getElementById('resultBox')
+  console.log('here is the rsult box element', resultBoxElement);
+
+  // if using innerHTML, the string will be read as if it is HTML
+  resultBoxElement.innerHTML = '<img class="img-fluid" src="https://images.unsplash.com/photo-1599137258505-8871bd07cbbb?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Best cat ever">'
 }
 
 // !SECTION
