@@ -11,7 +11,39 @@
 </head>
 
 <body>
-  <h1>Secret Code</h1>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="m-3">Secret Code</h1>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- NOTE we can target this id in javascript using document.getElementById(). All of your id attributes in HTML should be unique -->
+          <h2>User Code: <span id="userCodeSpan"></span></h2>
+        </div>
+        <div class="col-12">
+          <button onclick="addSmiley()" class="btn btn-outline-dark">🙂</button>
+          <button onclick="addKitty()" class="btn btn-outline-dark">😺</button>
+          <button onclick="addSkull()" class="btn btn-outline-dark">💀</button>
+        </div>
+        <div class="col-12">
+          <button onclick="checkCode()" class="btn btn-outline-success">
+            Check code
+          </button>
+        </div>
+        <div id="resultBox" class="col-12">
+
+        </div>
+      </div>
+    </div>
+  </main>
 
 
   <!-- NOTE bring in your javascript file at the end of the body -->

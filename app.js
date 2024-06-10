@@ -1,4 +1,6 @@
+// SECTION primitives
 console.groupCollapsed()
+
 
 console.log('Javascript is working!')
 
@@ -93,4 +95,71 @@ let weirdNumber = 'Jeremy' - 7 // NaN, falsy
 
 console.log(weirdNumber);
 
+if (numberOfCats === '0') {
+  console.log('numberofcats is equivalent');
+}
+
 console.groupEnd()
+
+// !SECTION
+
+// SECTION application code
+// NOTE global scoped variables are accessible to all other pieces of code and can be changed at will
+
+const secretCode = '💀💀😺💀🙂'
+
+let userCode = ''
+
+// REVIEW all different ways to declare functions
+// const addSmiley = function(){}
+// const addSmiley = () => { }
+
+function addSmiley() {
+  userCode += '🙂'
+  console.log('you clicked on the smiley', userCode);
+
+  updateUserCodeElement()
+}
+
+function addKitty() {
+  userCode += '😺'
+  console.log('you clicked on the kitty', userCode)
+
+  updateUserCodeElement()
+}
+
+function addSkull() {
+  userCode += '💀'
+  console.log('you clicked on the skull', userCode)
+
+  updateUserCodeElement()
+}
+
+function checkCode() {
+  if (userCode == secretCode) {
+    console.log('YOU GOT IT RIGHT BUDDY')
+    revealSecretPicture()
+  }
+  else {
+    console.log("YOU GOT IT WRONG, NOT SMART GUY")
+    userCode = ''
+    updateUserCodeElement()
+  }
+}
+
+function updateUserCodeElement() {
+  // grabs a reference to the HTML element using the supplied id
+  const userCodeElement = document.getElementById('userCodeSpan')
+  console.log('user code element', userCodeElement);
+  userCodeElement.innerText = userCode
+}
+
+function revealSecretPicture() {
+  const resultBoxElement = document.getElementById('resultBox')
+  console.log('here is the rsult box element', resultBoxElement);
+
+  // if using innerHTML, the string will be read as if it is HTML
+  resultBoxElement.innerHTML = '<img class="img-fluid" src="https://images.unsplash.com/photo-1611145949721-e5158cddf59f?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Best cat ever">'
+}
+
+// !SECTION
