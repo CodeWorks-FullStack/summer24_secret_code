@@ -1,7 +1,6 @@
 // SECTION primitives
 console.groupCollapsed()
 
-
 console.log('Javascript is working!')
 
 // ANCHOR strings
@@ -20,13 +19,13 @@ const catchPhrase = "Jeremy's gonna eat all the food"
 
 const favoriteQuote = `Hey bub - "Wolverine"`
 
-// string concatenation, squishes two strings together
+// string concatenation, squishes strings together
 const fullName = firstName + ' ' + lastName
 
 console.log(fullName)
 
 // string interpolation can only be done on strings declared with backticks
-console.log(`Hello my name is ${fullName}, my catchphrasse is "${catchPhrase}"`)
+console.log(`Hello my name is ${fullName}, my catchphrase is "${catchPhrase}"`)
 
 firstName = 'Big Jerms'
 
@@ -36,8 +35,9 @@ let age = 33
 
 //  does not change value
 age + 1
-// changes value
+// increases value by 1
 age += 1
+// increases value by 1
 age = age + 1
 // increases value by 1
 age++
